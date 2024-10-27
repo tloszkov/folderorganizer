@@ -23,7 +23,7 @@ func organizeFolder(folder string) error {
 		targetFolder := filepath.Join(folder, folderName)
 		if _, err := os.Stat(targetFolder); os.IsNotExist(err) {
 			if err := os.Mkdir(targetFolder, os.ModePerm); err != nil {
-				return fmt.Errorf("nem sikerült létrehozni a(z) %s mappát: %w", folderName, err)
+				return fmt.Errorf("failed to create the folder %s: %w", folderName, err)
 			}
 		}
 	}
